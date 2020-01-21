@@ -1,0 +1,16 @@
+{
+  "name": "fastboot-server",
+  "version": "0.0.1",
+  "description": "Fastboot server for the corporate website.",
+  "main": "server.js",
+  "author": "Keletes",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "fastboot-app-server": "^2.0.0",
+    "fastboot-fs-notifier": "^0.1.1",
+    "fastboot-s3-downloader": "^0.2.2",
+    "fastboot-s3-notifier": "^0.1.2"
+  }
+}
