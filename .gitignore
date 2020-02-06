@@ -7,3 +7,5 @@ package-lock.json
 stats.json
 yarn-error.log
 .env
+dist
+dist.zip
