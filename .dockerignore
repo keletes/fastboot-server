@@ -8,3 +8,6 @@ test
 bitbucket-pipelines.yml
 README.md
 k8s
+__MACOSX
+dist
+dist.zip
