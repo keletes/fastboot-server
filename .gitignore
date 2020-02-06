@@ -7,5 +7,6 @@ package-lock.json
 stats.json
 yarn-error.log
 .env
+__MACOSX
 dist
 dist.zip
