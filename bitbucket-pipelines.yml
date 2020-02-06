@@ -1,0 +1,17 @@
+pipelines:
+  branches:
+    production:
+    - step:
+        name: Creating Docker image and pushing to Docker Hub
+        image: atlassian/default-image:2
+        services:
+          - docker
+        script:
+          - docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD
+          - docker build -t fastboot-server:latest .
+          - docker push fastboot-server:latest
+          - docker tag fastboot-server:latest fastboot-server:$BITBUCKET_BUILD_NUMBER
+          - docker push fastboot-server:$BITBUCKET_BUILD_NUMBER
+        caches:
+          - docker
+          - node
