@@ -51,7 +51,7 @@ class S3Downloader {
       return Promise.resolve();
     }
 
-    this.ui.writeLine('removing ' + this.outputPath);
+    this.ui.writeLine('removing old ' + this.outputPath);
     return fsp.remove(this.outputPath);
   }
 
