@@ -25,13 +25,16 @@ if (process.env.S3_BUCKET && process.env.S3_KEY) {
 }
 
 
+
+
 let server = new FastBootAppServer({
   notifier,
   downloader,
   distPath,
   gzip: !!process.env.GZIP,
   host: process.env.HOST || '0.0.0.0',
-  chunkedResponse: !!process.env.CHUNKED,
+  sandboxGlobals: process.env,
+  chunkedResponse: !!process.env.CHUNKED
 });
 
 server.start();
