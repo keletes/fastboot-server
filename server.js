@@ -4,13 +4,6 @@ let notifier = null;
 let downloader = null;
 let distPath = process.env.DIST_PATH || '/app';
 
-// The following function is a temporary workaround for this bug:
-// https://github.com/eligrey/FileSaver.js/issues/671
-const fileSaverFix = (req, res, next) => {
-  global.HTMLElement = window.HTMLElement;
-  global.HTMLAnchorElement = window.HTMLAnchorElement;
-}
-
 if (process.env.S3_BUCKET && process.env.S3_KEY) {
   config = {
     endpoint: process.env.S3_ENDPOINT,
@@ -31,6 +24,9 @@ if (process.env.S3_BUCKET && process.env.S3_KEY) {
   });
 }
 
+
+
+
 let server = new FastBootAppServer({
   notifier,
   downloader,
@@ -38,8 +34,7 @@ let server = new FastBootAppServer({
   gzip: !!process.env.GZIP,
   host: process.env.HOST || '0.0.0.0',
   sandboxGlobals: process.env,
-  chunkedResponse: !!process.env.CHUNKED,
-  beforeMiddleware: (app) => app.use(fileSaverFix)
+  chunkedResponse: !!process.env.CHUNKED
 });
 
 server.start();
