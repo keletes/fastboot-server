@@ -1,16 +1,16 @@
 {
-  "name": "fastboot-server",
-  "version": "0.0.1",
-  "description": "Fastboot server for the corporate website.",
-  "main": "server.js",
-  "author": "Keletes",
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {
-    "aws-sdk": "^2.825.0",
-    "dotenv": "^8.2.0",
-    "fastboot-app-server": "^3.0.0",
-    "fastboot-fs-notifier": "^0.1.1",
-    "fs-promise": "^2.0.3"
-  }
+	"name": "fastboot-server",
+	"version": "0.0.1",
+	"description": "Fastboot server for the corporate website.",
+	"main": "server.js",
+	"author": "Keletes",
+	"license": "UNLICENSED",
+	"private": true,
+	"dependencies": {
+		"aws-sdk": "^2.825.0",
+		"dotenv": "^8.2.0",
+		"fastboot-app-server": "^3.0.0",
+		"fastboot-fs-notifier": "^0.1.1",
+		"fs-promise": "^2.0.3"
+	}
 }
