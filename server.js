@@ -12,6 +12,7 @@ if (process.env.S3_BUCKET && process.env.S3_KEY) {
 		accessKeyId: process.env.S3_ACCESS_KEY,
 		secretAccessKey: process.env.S3_SECRET,
 	};
+	console.log(config);
 	const S3Notifier = require('./notifiers/s3');
 	const S3Downloader = require('./downloaders/s3');
 	notifier = new S3Notifier(config);
