@@ -1,17 +1,17 @@
 pipelines:
-  branches:
-    production:
-    - step:
-        name: Creating Docker image and pushing to Docker Hub
-        image: atlassian/default-image:2
-        services:
-          - docker
-        script:
-          - docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD
-          - docker build -t keletes/fastboot-server:latest .
-          - docker push keletes/fastboot-server:latest
-          - docker tag keletes/fastboot-server:latest keletes/fastboot-server:$BITBUCKET_BUILD_NUMBER
-          - docker push keletes/fastboot-server:$BITBUCKET_BUILD_NUMBER
-        caches:
-          - docker
-          - node
+    branches:
+        production:
+            - step:
+                  name: Creating Docker image and pushing to Docker Hub
+                  image: atlassian/default-image:2
+                  services:
+                      - docker
+                  script:
+                      - docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD
+                      - docker build -t keletes/fastboot-server:latest .
+                      - docker push keletes/fastboot-server:latest
+                      - docker tag keletes/fastboot-server:latest keletes/fastboot-server:$BITBUCKET_BUILD_NUMBER
+                      - docker push keletes/fastboot-server:$BITBUCKET_BUILD_NUMBER
+                  caches:
+                      - docker
+                      - node
