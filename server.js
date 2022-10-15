@@ -31,7 +31,9 @@ let server = new FastBootAppServer({
 	gzip: !!process.env.GZIP,
 	host: process.env.HOST || '0.0.0.0',
 	buildSandboxGlobals(defaultGlobals) {
-		return Object.assign({}, defaultGlobals, process.env);
+		return Object.assign({}, defaultGlobals, process.env, {
+			setInterval,
+		});
 	},
 	chunkedResponse: !!process.env.CHUNKED,
 });
