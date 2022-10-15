@@ -30,7 +30,9 @@ let server = new FastBootAppServer({
 	distPath,
 	gzip: !!process.env.GZIP,
 	host: process.env.HOST || '0.0.0.0',
-	sandboxGlobals: process.env,
+	buildSandboxGlobals(defaultGlobals) {
+		return Object.assign({}, defaultGlobals, process.env);
+	},
 	chunkedResponse: !!process.env.CHUNKED,
 });
 
