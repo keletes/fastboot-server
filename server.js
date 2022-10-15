@@ -33,6 +33,7 @@ let server = new FastBootAppServer({
 	buildSandboxGlobals(defaultGlobals) {
 		return Object.assign({}, defaultGlobals, process.env, {
 			setInterval,
+			clearInterval,
 		});
 	},
 	chunkedResponse: !!process.env.CHUNKED,
